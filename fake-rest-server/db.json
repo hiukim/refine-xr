@@ -1,0 +1,27 @@
+{
+  "assets": [
+    {
+      "title": "Test1",
+      "model": [
+        {
+          "uid": "rc-upload-1676795469892-6",
+          "lastModified": 1670914674692,
+          "lastModifiedDate": "2022-12-13T06:57:54.692Z",
+          "name": "RobotExpressive.glb",
+          "size": 463988,
+          "type": "",
+          "percent": 100,
+          "originFileObj": {
+            "uid": "rc-upload-1676795469892-6"
+          },
+          "status": "done",
+          "response": {
+            "url": "http://localhost:4000/uploads/file-1676795584415.glb"
+          },
+          "xhr": {}
+        }
+      ],
+      "id": 1
+    }
+  ]
+}

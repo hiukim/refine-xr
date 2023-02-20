@@ -17,18 +17,30 @@ import { AssetList } from "./assets/list";
 import { AssetEdit } from "./assets/edit";
 import { AssetShow } from "./assets/show";
 
+import { ModelviewerExperienceList } from "./modelviewer-experiences/list";
+import { ModelviewerXR } from "./modelviewer-experiences/xr";
+
 //const API_URL = "https://api.fake-rest.refine.dev";
 const API_URL = "http://localhost:4000";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <Refine
-      routerProvider={routerProvider}
+      //routerProvider={routerProvider}
       dataProvider={dataProvider(API_URL)}
       notificationProvider={notificationProvider}
       Layout={Layout}
       ReadyPage={ReadyPage}
       catchAll={<ErrorComponent />}
+      routerProvider={{
+	  ...routerProvider,
+	  routes: [
+	      {
+		  element: <ModelviewerXR />,
+		  path: "/modelviewer-xr/1",
+	      },
+	  ],
+      }}
       resources={[
         {
           name: "assets",
@@ -40,6 +52,14 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
           show: AssetShow,
           //create: AntdInferencer,
           create: AssetCreate,
+          canDelete: true,
+        },
+        {
+          name: "modelviewer-experiences",
+          list: ModelviewerExperienceList,
+          edit: AntdInferencer,
+          show: AntdInferencer,
+          create: AntdInferencer,
           canDelete: true,
         }
       ]}

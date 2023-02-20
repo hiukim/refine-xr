@@ -1,7 +1,7 @@
 {
   "assets": [
     {
-      "title": "Test1",
+      "title": "Robot",
       "model": [
         {
           "uid": "rc-upload-1676795469892-6",
@@ -22,6 +22,38 @@
         }
       ],
       "id": 1
+    },
+    {
+      "title": "Little Tokyo",
+      "model": [
+        {
+          "uid": "rc-upload-1676876650754-7",
+          "lastModified": 1676876805980,
+          "lastModifiedDate": "2023-02-20T07:06:45.980Z",
+          "name": "LittlestTokyo.glb",
+          "size": 4133072,
+          "type": "",
+          "percent": 100,
+          "originFileObj": {
+            "uid": "rc-upload-1676876650754-7"
+          },
+          "status": "done",
+          "response": {
+            "url": "http://localhost:4000/uploads/file-1676876832537.glb"
+          },
+          "xhr": {}
+        }
+      ],
+      "id": 2
+    }
+  ],
+  "modelviewer-experiences": [
+    {
+      "id": 1,
+      "title": "MV1",
+      "asset": {
+        "id": 1
+      }
     }
   ]
 }

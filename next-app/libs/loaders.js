@@ -8,3 +8,13 @@ export const loadGLTF = (path) => {
     });
   });
 }
+
+export const loadImage = (path) => {
+  return new Promise((resolve, reject) => {
+    let img = new Image()
+    img.crossOrigin = "Anonymous";
+    img.onload = () => resolve(img);
+    img.onerror = reject;
+    img.src = path;
+  });
+}

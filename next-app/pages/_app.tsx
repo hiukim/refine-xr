@@ -22,6 +22,11 @@ import { ModelviewerExperienceShow } from "../components/modelviewer-experiences
 import { ModelviewerExperienceCreate } from "../components/modelviewer-experiences/create";
 import { ModelviewerExperienceEdit } from "../components/modelviewer-experiences/edit";
 
+import { ImageTrackExperienceList } from "../components/imagetrack-experiences/list";
+import { ImageTrackExperienceShow } from "../components/imagetrack-experiences/show";
+import { ImageTrackExperienceCreate } from "../components/imagetrack-experiences/create";
+import { ImageTrackExperienceEdit } from "../components/imagetrack-experiences/edit";
+
 //const API_URL = "https://api.fake-rest.refine.dev";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
@@ -54,9 +59,17 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         {
           name: "modelviewer-experiences",
           list: ModelviewerExperienceList,
-          edit: AntdInferencer,
+          edit: ModelviewerExperienceEdit,
           show: ModelviewerExperienceShow,
-          create: AntdInferencer,
+          create: ModelviewerExperienceCreate,
+          canDelete: true,
+        },
+        {
+          name: "imagetrack-experiences",
+          list: ImageTrackExperienceList,
+          edit: ImageTrackExperienceEdit,
+          show: ImageTrackExperienceShow,
+          create: ImageTrackExperienceCreate,
           canDelete: true,
         }
       ]}

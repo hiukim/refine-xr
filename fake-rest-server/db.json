@@ -62,5 +62,52 @@
       },
       "id": 2
     }
+  ],
+  "imagetrack-experiences": [
+    {
+      "title": "I1",
+      "asset": {
+        "id": 1
+      },
+      "id": 1,
+      "model": [
+        {
+          "uid": "rc-upload-1677053353442-6",
+          "lastModified": 1670914674777,
+          "lastModifiedDate": "2022-12-13T06:57:54.777Z",
+          "name": "robot.png",
+          "size": 754707,
+          "type": "image/png",
+          "percent": 100,
+          "originFileObj": {
+            "uid": "rc-upload-1677053353442-6"
+          },
+          "status": "done",
+          "response": {
+            "url": "https://192.168.1.68:4001/uploads/file-1677054061217.png"
+          },
+          "xhr": {}
+        }
+      ],
+      "targetImage": [
+        {
+          "uid": "rc-upload-1677095858864-3",
+          "lastModified": 1670914674777,
+          "lastModifiedDate": "2022-12-13T06:57:54.777Z",
+          "name": "robot.png",
+          "size": 754707,
+          "type": "image/png",
+          "percent": 100,
+          "originFileObj": {
+            "uid": "rc-upload-1677095858864-3"
+          },
+          "status": "done",
+          "response": {
+            "url": "https://192.168.1.68:4001/uploads/file-1677095927886.png"
+          },
+          "xhr": {}
+        }
+      ]
+    }
   ]
 }

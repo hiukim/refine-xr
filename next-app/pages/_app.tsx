@@ -19,7 +19,8 @@ import { AssetShow } from "../components/assets/show";
 
 import { ModelviewerExperienceList } from "../components/modelviewer-experiences/list";
 import { ModelviewerExperienceShow } from "../components/modelviewer-experiences/show";
-import { ModelviewerXR } from "../components/modelviewer-experiences/xr";
+import { ModelviewerExperienceCreate } from "../components/modelviewer-experiences/create";
+import { ModelviewerExperienceEdit } from "../components/modelviewer-experiences/edit";
 
 //const API_URL = "https://api.fake-rest.refine.dev";
 

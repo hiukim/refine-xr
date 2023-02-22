@@ -21,6 +21,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 const fileUpload = upload.fields([{name: "file"}]);
 
+server.enable('trust proxy');
+
 server.use(middlewares)
 
 server.post("/media/upload", fileUpload, (req, res) => {

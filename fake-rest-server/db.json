@@ -4,19 +4,19 @@
       "title": "Robot",
       "model": [
         {
-          "uid": "rc-upload-1676795469892-6",
-          "lastModified": 1670914674692,
-          "lastModifiedDate": "2022-12-13T06:57:54.692Z",
-          "name": "RobotExpressive.glb",
+          "uid": "rc-upload-1677032989856-4",
+          "lastModified": 1677031066342,
+          "lastModifiedDate": "2023-02-22T01:57:46.342Z",
+          "name": "file-1676795584415.glb",
           "size": 463988,
           "type": "",
           "percent": 100,
           "originFileObj": {
-            "uid": "rc-upload-1676795469892-6"
+            "uid": "rc-upload-1677032989856-4"
           },
           "status": "done",
           "response": {
-            "url": "http://localhost:4000/uploads/file-1676795584415.glb"
+            "url": "https://192.168.1.68:4001/uploads/file-1677032992129.glb"
           },
           "xhr": {}
         }

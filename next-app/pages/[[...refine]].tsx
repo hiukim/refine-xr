@@ -5,9 +5,11 @@ import {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   // const { resource, action, id } = handleRefineParams(context.params?.refine);
-
   return {
-    props: {},
+    props: {
+      API_URL: process.env.API_URL,
+      XR_SERVE_URL: process.env.XR_SERVE_URL
+    },
   };
 };
 

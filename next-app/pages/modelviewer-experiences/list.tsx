@@ -46,20 +46,7 @@ export const ModelviewerExperienceList: React.FC<
                         )
                     }
                 />
-                <Table.Column
-                    title="XR Experience"
-                    dataIndex="experience"
-                    render={(_, record: BaseRecord) => (
-                        <Space>
-			     <ShowButton
-                                hideText
-                                size="small"
-                                recordItemId={record.id}
-                            />
-                        </Space>
-                    )}
-                />
-                <Table.Column
+	       <Table.Column
                     title="Actions"
                     dataIndex="actions"
                     render={(_, record: BaseRecord) => (

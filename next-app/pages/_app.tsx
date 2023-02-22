@@ -12,14 +12,14 @@ import dataProvider from "@pankod/refine-simple-rest";
 import "@pankod/refine-antd/dist/reset.css";
 import { AntdInferencer } from "@pankod/refine-inferencer/antd";
 
-import { AssetCreate } from "./assets/asset-create";
-import { AssetList } from "./assets/list";
-import { AssetEdit } from "./assets/edit";
-import { AssetShow } from "./assets/show";
+import { AssetCreate } from "../components/assets/create";
+import { AssetList } from "../components/assets/list";
+import { AssetEdit } from "../components/assets/edit";
+import { AssetShow } from "../components/assets/show";
 
-import { ModelviewerExperienceList } from "./modelviewer-experiences/list";
-import { ModelviewerExperienceShow } from "./modelviewer-experiences/show";
-import { ModelviewerXR } from "./modelviewer-experiences/xr";
+import { ModelviewerExperienceList } from "../components/modelviewer-experiences/list";
+import { ModelviewerExperienceShow } from "../components/modelviewer-experiences/show";
+import { ModelviewerXR } from "../components/modelviewer-experiences/xr";
 
 //const API_URL = "https://api.fake-rest.refine.dev";
 

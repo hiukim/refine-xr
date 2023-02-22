@@ -1,4 +1,4 @@
 app
 refine-xr
 *.swp
-*/.DS_Store
+**/.DS_Store

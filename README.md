@@ -1,17 +1,22 @@
-## refine-xr
+# refine-XR
 
-Refine-XR is a CRUD application to create and publish WebXR experiences easily on the web without writing any code. It integrates with numerous WebXR solutions, including WebXR API, MindAR SDK, AFRAME/ThreeJS AR/VR, etc.
+# About 
+Refine-XR is a CRUD-based management system that enables users to manage 3D assets and create web-based XR applications without requiring any programming expertise.
 
-## Source Code
+The system comprises a 3D viewer within the admin dashboard, enabling users to configure WebXR experiences using various input options. Additionally, users can directly publish their experiences within the system.
+
+In principle, Refine-XR can integrate with any type of WebXR solutions or frameworks via extensions. Currently, the system supports markerless AR experiences, image tracking AR experiences as well as VR experiences.
+
+# Source Code
 This repo consists of two main components. 
 
 #### fake-rest-server
-Fake-Rest-Server is a fake REST api server for local development. It's based on `https://github.com/typicode/json-server`
+fake-rest-server is a fake REST api server for local development, based on json-server. Ref: `https://github.com/typicode/json-server`
 
 #### nextjs-app
-NextJS app is a refine based NextJS application. IT's based on `https://refine.dev/` It contains the CMS for creating and deploy webXR experiences.
+nextjs-app is a refine based NextJS application. It is the main CMS for creating and managing webXR experiences. Ref: `https://refine.dev/`
 
-## Development
+# Development
 
 #### 1. Update the environment variables (nextjs-app)
 
@@ -19,67 +24,68 @@ NextJS app is a refine based NextJS application. IT's based on `https://refine.d
 
 There are two required URL configs.
 
-API_URL: This is the url of the rest API endpoint (url of the fake-rest-server or the url of a real REST api server)
-XR_SERVE_URL: This is the url of nextjs-app. 
+API_URL: The url of the rest API endpoint (url of the fake-rest-server or the url of other REST api server)
 
-Normally you can run the both servers and test on your desktop browsers using localhost without problem, i.e.
+XR_SERVE_URL: The url of nextjs-app. 
+
+Normally you can run both servers and test on your desktop browser using localhost without problem, e.g:
+
 ```
 API_URL=http://localhost:4000
 XR_SERVE_URL=http://localhost:3000
 ```
 
-__In fact, if you don't need to test on mobile devices, you can just use the above environment variables and only do `Step 2` and `Step 3`.__
+__In fact, if you don't need to test on mobile devices, you can simply use the above variables and go to `Step 2` and `Step 3`.__
 
+However, because the system will publish WebXR experiences, which you might want to test with mobile devices. To do that, your mobile devices and desktop running the servers have to be connected to the same local network. We also need to configure the servers' environment variables to include the server IP addresses so the mobile devices can access the published webpages. Therefore, it involves some extra work.
 
-However, because it's a webXR application, so you most likely want to test it with a mobile device connected to the same network. To do that, we will need to know your desktop local network IP.
-You can find it by using, for example, `> ifconfig`. Let's assume your ip is `192.168.0.1` first.
+Let's assume your desktop local ip address is `192.168.0.1` (You can find out using `ifconfig` command is needed). Besides, mobile browsers mostly require HTTPS in order to access the webcam, which is needed in XR applications. So we also need to enable HTTPS. There are numerous ways to do that, but in this development guide, we will use a simple SSL proxy with a self-signed certificate. 
 
-Also, it requires HTTPS to use webcam, which is required in XR application. So update the .env.local to
+Now, update the `.env.local` to the following:
+
 ```
 API_URL=https://192.168.0.1:4001
 XR_SERVE_URL=https://192.168.0.1:3001
 ```
-We will explain why the ports are 4001 and 3001 later.
 
+We will explain why the ports are 4001 and 3001 in Step 4.
 
 #### 2. Start the fake-rest-server
 
 open a new terminal:
 `> cd fake-rest-server && npm run dev`
 
-It should starts on port 4000
+The server should start on port 4000
 
 #### 3. Start the nextJS server
 
 open a new terminal:
 `> cd nextjs-app && npm run dev`
 
-It should starts on port 3000
+The server should start on port 3000
 
 #### 4. run a local ssl proxy 
 
-Since the servers start with HTTP, we need to create a ssl proxy to serve the clients with https. There are many ways to do that, but here we use `local-ssy-proxy` (Ref: https://github.com/cameronhunter/local-ssl-proxy) to proxy a secure port. 
+We use `local-ssl-proxy` to map port 3001 (https) to 3000 (http) , and port 4001 (https) to 4000 (http)
 
-Install local-ssl-proxy
+Ref: https://github.com/cameronhunter/local-ssl-proxy
+
+4.1 Install local-ssl-proxy (if you havent done that)
 `> npm install -g local-ssl-proxy`
 
-open a new terminal:
+4.2 open a new terminal:
 `> local-ssl-proxy --source 3001 --target 3000` 
 
-open a new terminal:
+4.3 open a new terminal:
 `> local-ssl-proxy --source 4001 --target 4000` 
 
 #### Summary
-In summary, you should have four processes running. 
+If everything works well, you should have four processes running locally: 
 
 1. fake-rest-server, listening on port 4000
 2. nextjs-app, listening on port 3000
 3. local-ssl-proxy (3001 -> 3000)
 4. local-ssl-proxy (4001 -> 4000)
 
-Then your app should be running on your desktop http://localhost:3000 or https://localhost:3001
-
-
-
-
+and your system should be running on http://localhost:3000 or https://localhost:3001
 

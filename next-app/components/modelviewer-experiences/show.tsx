@@ -33,6 +33,10 @@ export const ModelviewerExperienceShow: React.FC<IResourceComponentsProps> = (pr
             <NumberField value={record?.id ?? ""} />
             <Title level={5}>Title</Title>
             <TextField value={record?.title} />
+
+            <Title level={5}>Scale</Title>
+            <TextField value={record?.scale} />
+
             <Title level={5}>Asset</Title>
             {assetIsLoading ? <>Loading...</> : <>{assetData?.data?.title}</>}
 

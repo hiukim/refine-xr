@@ -6,7 +6,7 @@ import dataProvider from "@pankod/refine-simple-rest";
 import styles from "../styles/modelviewer.module.css";
 import {loadGLTF, loadImage} from "../libs/loaders";
 
-const compileTarget = async({container, targetImageURL, modelURL}) => {
+const compileTarget = async({container, targetImageURL, modelURL, modelScale}) => {
   const compiler = new window.MINDAR.IMAGE.Compiler();
 
   const targetImage = await loadImage(targetImageURL);
@@ -19,10 +19,10 @@ const compileTarget = async({container, targetImageURL, modelURL}) => {
   const blob = new Blob([exportedBuffer]);
   const mindSrc = URL.createObjectURL(blob);
 
-  await buildScene({container, mindSrc, modelURL});
+  await buildScene({container, mindSrc, modelURL, modelScale});
 }
 
-const buildScene = async ({container, modelURL, mindSrc}) => {
+const buildScene = async ({container, modelURL, mindSrc, modelScale}) => {
   const {THREE} = window.MINDAR.IMAGE;
 
   const mindarThree = new window.MINDAR.IMAGE.MindARThree({
@@ -36,7 +36,7 @@ const buildScene = async ({container, modelURL, mindSrc}) => {
   scene.add(light);
 
   const m = await loadGLTF(modelURL);
-  m.scene.scale.set(0.2, 0.2, 0.2);
+  m.scene.scale.set(modelScale, modelScale, modelScale);
   //m.scene.position.set(0, -0.4, 0);
 
   const anchor = mindarThree.addAnchor(0);
@@ -56,6 +56,7 @@ export const ImageTrackXR: React.FC<IResourceComponentsProps> = ({assetData, exp
 
   const modelURL = assetData.model[0].response.url;
   const targetImageURL = experienceData.targetImage[0].response.url; 
+  const modelScale = experienceData.scale? experienceData.scale: 1;
 
   const scriptReady = useMemo(() => {
     return scriptState === 'ready' && script2State === 'ready';
@@ -63,7 +64,7 @@ export const ImageTrackXR: React.FC<IResourceComponentsProps> = ({assetData, exp
 
   useEffect(() => {
     if (scriptReady) {
-	compileTarget({container: containerRef.current, targetImageURL, modelURL});
+	compileTarget({container: containerRef.current, targetImageURL, modelURL, modelScale});
     }
   }, [scriptReady]);
 
@@ -77,8 +78,6 @@ export const ImageTrackXR: React.FC<IResourceComponentsProps> = ({assetData, exp
 export default ImageTrackXR;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-
-console.log("context", context);
   const experienceData = (await dataProvider(process.env.API_URL).getOne({
       resource: "imagetrack-experiences",
       id: context.query.id 

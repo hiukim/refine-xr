@@ -7,6 +7,7 @@ import {
     Input,
     useSelect,
     Select,
+    InputNumber,
 } from "@pankod/refine-antd";
 
 export const AframeExperienceEdit: React.FC<
@@ -57,6 +58,18 @@ export const AframeExperienceEdit: React.FC<
                 >
                     <Select {...assetSelectProps} />
                 </Form.Item>
+		<Form.Item
+                    label="Scale (default = 1.0)"
+                    name={["scale"]}
+                >
+                    <InputNumber/>
+                </Form.Item>
+		<Form.Item
+                    label="Sky Color (default = #FFFFFF)"
+                    name={["skyColor"]}
+		>
+                    <Input/>
+		</Form.Item>
             </Form>
         </Edit>
     );

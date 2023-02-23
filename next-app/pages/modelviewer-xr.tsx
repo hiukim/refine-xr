@@ -13,6 +13,7 @@ export const ModelviewerXR: React.FC<IResourceComponentsProps> = ({assetData, ex
   }
 
   const modelURL = assetData.model[0].response.url;
+  const scale = experienceData.scale? experienceData.scale: 1;
 
   return (
     <div style={{width: "100vw", height: "90vh"}}>
@@ -20,14 +21,11 @@ export const ModelviewerXR: React.FC<IResourceComponentsProps> = ({assetData, ex
 	style={{width: "100%", height: "100%"}}
 	ar
 	autoplay
-	scale="0.2 0.2 0.2"
+	scale={scale+" "+scale+" "+scale}
 	camera-controls
 	touch-action="pan-y"
 	src={modelURL}
       >
-	<button className={styles.hotspot} slot="hotspot-hand" data-position="0.12 0 0" data-normal="0 0 0 ">
-	  <div className={styles.annotation}>right leg</div>
-	</button>
       </model-viewer>
     </div>
   )

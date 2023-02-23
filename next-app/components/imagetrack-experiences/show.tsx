@@ -40,6 +40,11 @@ console.log("record", record);
             <Title level={5}>Asset</Title>
             {assetIsLoading ? <>Loading...</> : <>{assetData?.data?.title}</>}
 
+            <Title level={5}>Scale</Title>
+	    <div>
+	    <TextField value={record?.scale || 1.0} />
+	    </div>
+
             <Title level={5}>Target</Title>
 	    <div>
 		<img src={targetImageURL} width={300}/>

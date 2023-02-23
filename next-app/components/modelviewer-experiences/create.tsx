@@ -7,6 +7,7 @@ import {
     Input,
     useSelect,
     Select,
+    InputNumber,
 } from "@pankod/refine-antd";
 
 export const ModelviewerExperienceCreate: React.FC<
@@ -42,6 +43,17 @@ export const ModelviewerExperienceCreate: React.FC<
                     ]}
                 >
                     <Select {...assetSelectProps} />
+                </Form.Item>
+		<Form.Item
+                    label="Scale"
+                    name={["scale"]}
+                    rules={[
+                        {
+                            required: true,
+                        },
+                    ]}
+                >
+                    <InputNumber/>
                 </Form.Item>
             </Form>
         </Create>

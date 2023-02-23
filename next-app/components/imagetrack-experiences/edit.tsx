@@ -9,6 +9,7 @@ import {
     Select,
     Upload,
     getValueFromEvent,
+    InputNumber,
 } from "@pankod/refine-antd";
 import { useApiUrl } from "@pankod/refine-core";
 
@@ -86,6 +87,14 @@ export const ImageTrackExperienceEdit: React.FC<
                         </Upload.Dragger>
                     </Form.Item>
                 </Form.Item>
+
+		<Form.Item
+                    label="Scale (default = 1.0)"
+                    name={["scale"]}
+                >
+                    <InputNumber/>
+                </Form.Item>
+
             </Form>
         </Edit>
     );

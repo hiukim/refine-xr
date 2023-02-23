@@ -6,6 +6,7 @@ import {
     NumberField,
     TagField,
     TextField,
+    InputNumber,
 } from "@pankod/refine-antd";
 import QRCode from "react-qr-code";
 
@@ -33,6 +34,10 @@ export const AframeExperienceShow: React.FC<IResourceComponentsProps> = (props) 
             <NumberField value={record?.id ?? ""} />
             <Title level={5}>Title</Title>
             <TextField value={record?.title} />
+            <Title level={5}>Sky Color</Title>
+            <TextField value={record?.skyColor || "#FFFFFF"} />
+            <Title level={5}>Scale</Title>
+            <TextField value={record?.scale || 1.0} />
             <Title level={5}>Asset</Title>
             {assetIsLoading ? <>Loading...</> : <>{assetData?.data?.title}</>}
 

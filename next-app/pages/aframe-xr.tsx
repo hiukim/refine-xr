@@ -8,9 +8,12 @@ import styles from "../styles/modelviewer.module.css";
 export const AframeXR: React.FC<IResourceComponentsProps> = ({assetData, experienceData}) => {
   const scriptState = useExternalScript("https://aframe.io/releases/1.4.0/aframe.min.js");
 
+console.log("experienceData", experienceData);
   const modelURL = assetData.model[0].response.url;
   //console.log("data", assetData, experienceData);
   //const modelURL = "https://cdn.glitch.com/324a5290-5aa7-4efc-92d6-ae0736433b12%2Fspinosaurus.glb";
+  //
+  const scale = experienceData.scale? experienceData.scale: 1;
 
   if (scriptState != "ready") {
     return <div>Loading...</div>
@@ -19,9 +22,9 @@ export const AframeXR: React.FC<IResourceComponentsProps> = ({assetData, experie
   return (
     <div style={{width: "100%", height: "100%", position: "absolute"}}>
       <a-scene renderer="antialias: true;" vr-mode-ui="enabled: true">
-	<a-sky color="#001337"></a-sky>
+	<a-sky color={experienceData.skyColor || "#FFFFFF"}></a-sky>
 
-	<a-entity position="0 0 -5" rotation="0 0 0" scale="1 1 1"
+	<a-entity position="0 0 -5" rotation="0 0 0" scale={scale+" "+scale+" "+scale}
 	    gltf-model={modelURL}>
 	</a-entity>
       </a-scene>

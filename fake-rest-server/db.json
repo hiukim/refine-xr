@@ -76,7 +76,8 @@
       "title": "MV1",
       "asset": {
         "id": 1
-      }
+      },
+      "scale": 0.2
     },
     {
       "title": "M2",
@@ -84,6 +85,14 @@
         "id": 2
       },
       "id": 2
+    },
+    {
+      "title": "M3",
+      "asset": {
+        "id": 3
+      },
+      "scale": 0.6,
+      "id": 3
     }
   ],
   "imagetrack-experiences": [
@@ -130,7 +139,8 @@
           },
           "xhr": {}
         }
-      ]
+      ],
+      "scale": 0.3
     }
   ],
   "aframe-experiences": [
@@ -139,7 +149,10 @@
       "asset": {
         "id": 3
       },
-      "id": 1
+      "id": 1,
+      "scale": 0.5,
+      "skyeColor": "#6EBAA7",
+      "skyColor": "#6EBAA7"
     }
   ]
 }

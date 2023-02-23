@@ -22,6 +22,11 @@ import { ModelviewerExperienceShow } from "../components/modelviewer-experiences
 import { ModelviewerExperienceCreate } from "../components/modelviewer-experiences/create";
 import { ModelviewerExperienceEdit } from "../components/modelviewer-experiences/edit";
 
+import { AframeExperienceList } from "../components/aframe-experiences/list";
+import { AframeExperienceShow } from "../components/aframe-experiences/show";
+import { AframeExperienceCreate } from "../components/aframe-experiences/create";
+import { AframeExperienceEdit } from "../components/aframe-experiences/edit";
+
 import { ImageTrackExperienceList } from "../components/imagetrack-experiences/list";
 import { ImageTrackExperienceShow } from "../components/imagetrack-experiences/show";
 import { ImageTrackExperienceCreate } from "../components/imagetrack-experiences/create";
@@ -63,6 +68,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
           show: ModelviewerExperienceShow,
           create: ModelviewerExperienceCreate,
           canDelete: true,
+	  options: {label: "Markerless AR"},
         },
         {
           name: "imagetrack-experiences",
@@ -71,6 +77,16 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
           show: ImageTrackExperienceShow,
           create: ImageTrackExperienceCreate,
           canDelete: true,
+	  options: {label: "ImageTrack AR"},
+        },
+        {
+          name: "aframe-experiences",
+          list: AframeExperienceList,
+          edit: AframeExperienceEdit,
+          show: AframeExperienceShow,
+          create: AframeExperienceCreate,
+          canDelete: true,
+	  options: {label: "VR"},
         }
       ]}
     >

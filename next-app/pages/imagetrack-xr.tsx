@@ -63,7 +63,7 @@ export const ImageTrackXR: React.FC<IResourceComponentsProps> = ({assetData, exp
 
   useEffect(() => {
     if (scriptReady) {
-	//compileTarget({container: containerRef.current, targetImageURL, modelURL});
+	compileTarget({container: containerRef.current, targetImageURL, modelURL});
     }
   }, [scriptReady]);
 

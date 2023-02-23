@@ -45,6 +45,29 @@
         }
       ],
       "id": 2
+    },
+    {
+      "title": "Dino",
+      "model": [
+        {
+          "uid": "rc-upload-1677111826541-3",
+          "lastModified": 1677100673812,
+          "lastModifiedDate": "2023-02-22T21:17:53.812Z",
+          "name": "324a5290-5aa7-4efc-92d6-ae0736433b12_spinosaurus.glb",
+          "size": 8765912,
+          "type": "",
+          "percent": 100,
+          "originFileObj": {
+            "uid": "rc-upload-1677111826541-3"
+          },
+          "status": "done",
+          "response": {
+            "url": "https://192.168.1.68:4001/uploads/file-1677111841597.glb"
+          },
+          "xhr": {}
+        }
+      ],
+      "id": 3
     }
   ],
   "modelviewer-experiences": [
@@ -108,6 +131,15 @@
           "xhr": {}
         }
       ]
+    }
+  ],
+  "aframe-experiences": [
+    {
+      "title": "VR1",
+      "asset": {
+        "id": 3
+      },
+      "id": 1
     }
   ]
 }

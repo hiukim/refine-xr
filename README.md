@@ -13,15 +13,23 @@ NextJS app is a refine based NextJS application. IT's based on `https://refine.d
 
 ## Development
 
-#### 1. Update the environment variables
+#### 1. Update the environment variables (nextjs-app)
 
 `> cp .env.example .env.local`
+
+There are two required URL configs.
+
+API_URL: This is the url of the rest API endpoint (url of the fake-rest-server or the url of a real REST api server)
+XR_SERVE_URL: This is the url of nextjs-app. 
 
 Normally you can run the both servers and test on your desktop browsers using localhost without problem, i.e.
 ```
 API_URL=http://localhost:4000
 XR_SERVE_URL=http://localhost:3000
 ```
+
+__In fact, if you don't need to test on mobile devices, you can just use the above environment variables and only do `Step 2` and `Step 3`.__
+
 
 However, because it's a webXR application, so you most likely want to test it with a mobile device connected to the same network. To do that, we will need to know your desktop local network IP.
 You can find it by using, for example, `> ifconfig`. Let's assume your ip is `192.168.0.1` first.

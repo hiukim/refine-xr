@@ -1,0 +1,123 @@
+{
+  "assets": [
+    {
+      "title": "Robot",
+      "model": [
+        {
+          "uid": "rc-upload-1677181530945-3",
+          "lastModified": 1677031066342,
+          "lastModifiedDate": "2023-02-22T01:57:46.342Z",
+          "name": "Robot.glb",
+          "size": 463988,
+          "type": "",
+          "percent": 100,
+          "originFileObj": {
+            "uid": "rc-upload-1677181530945-3"
+          },
+          "status": "done",
+          "response": {
+            "url": "https://192.168.1.68:4001/uploads/file-1677182408013.glb"
+          },
+          "xhr": {}
+        }
+      ],
+      "id": 1
+    },
+    {
+      "title": "LittleTokyo",
+      "model": [
+        {
+          "uid": "rc-upload-1677181530945-6",
+          "lastModified": 1676876805980,
+          "lastModifiedDate": "2023-02-20T07:06:45.980Z",
+          "name": "LittleTokyo.glb",
+          "size": 4133072,
+          "type": "",
+          "percent": 100,
+          "originFileObj": {
+            "uid": "rc-upload-1677181530945-6"
+          },
+          "status": "done",
+          "response": {
+            "url": "https://192.168.1.68:4001/uploads/file-1677182433041.glb"
+          },
+          "xhr": {}
+        }
+      ],
+      "id": 2
+    },
+    {
+      "title": "Astronaut",
+      "model": [
+        {
+          "uid": "rc-upload-1677181530945-9",
+          "lastModified": 1676885567779,
+          "lastModifiedDate": "2023-02-20T09:32:47.779Z",
+          "name": "Astronaut.glb",
+          "size": 8947140,
+          "type": "",
+          "percent": 100,
+          "originFileObj": {
+            "uid": "rc-upload-1677181530945-9"
+          },
+          "status": "done",
+          "response": {
+            "url": "https://192.168.1.68:4001/uploads/file-1677182459222.glb"
+          },
+          "xhr": {}
+        }
+      ],
+      "id": 3
+    }
+  ],
+  "modelviewer-experiences": [
+    {
+      "title": "markerless 1",
+      "asset": {
+        "id": 3
+      },
+      "scale": 0.8,
+      "id": 1
+    }
+  ],
+  "imagetrack-experiences": [
+    {
+      "title": "image 1",
+      "asset": {
+        "id": 1
+      },
+      "targetImage": [
+        {
+          "uid": "rc-upload-1677181530945-12",
+          "lastModified": 1670914674777,
+          "lastModifiedDate": "2022-12-13T06:57:54.777Z",
+          "name": "robot-target.png",
+          "size": 754707,
+          "type": "image/png",
+          "percent": 100,
+          "originFileObj": {
+            "uid": "rc-upload-1677181530945-12"
+          },
+          "status": "done",
+          "response": {
+            "url": "https://192.168.1.68:4001/uploads/file-1677184097498.png"
+          },
+          "xhr": {}
+        }
+      ],
+      "scale": 0.6,
+      "id": 1
+    }
+  ],
+  "aframe-experiences": [
+    {
+      "title": "VR 1",
+      "asset": {
+        "id": 2
+      },
+      "scale": 0.4,
+      "skyColor": "#aaaaff",
+      "id": 1
+    }
+  ]
+}

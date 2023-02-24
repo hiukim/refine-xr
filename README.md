@@ -1,4 +1,4 @@
-# refine-XR
+![XR copy](https://user-images.githubusercontent.com/459126/221075122-0b8b3536-fa34-4b9f-8f56-7a8136f5911c.png)
 
 # About 
 Refine-XR is a CRUD-based management system that enables users to manage 3D assets and create web-based XR applications without requiring any programming expertise.
@@ -13,8 +13,8 @@ This repo consists of two main components.
 #### fake-rest-server
 fake-rest-server is a fake REST api server for local development, based on json-server. Ref: `https://github.com/typicode/json-server`
 
-#### nextjs-app
-nextjs-app is a refine based NextJS application. It is the main CMS for creating and managing webXR experiences. Ref: `https://refine.dev/`
+#### next-app
+next-app is a refine based NextJS application. It is the main CMS for creating and managing webXR experiences. Ref: `https://refine.dev/`
 
 # Development
 
@@ -88,4 +88,7 @@ If everything works well, you should have four processes running locally:
 4. local-ssl-proxy (4001 -> 4000)
 
 and your system should be running on http://localhost:3000 or https://localhost:3001
+
+You can also use `> ./start-dev.sh` that does step 2 to step 4 for you in one go.
+
 
